@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: signupservice
+spec:
+  selector:
+    matchLabels:
+      app: signupservice
+  template:
+    metadata:
+      labels:
+        app: signupservice
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 5
+      securityContext:
+        fsGroup: 1000
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 1000
+      containers:
+      - name: server
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - all
+          privileged: false
+          readOnlyRootFilesystem: true
+        image: signupservice
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PORT
+          value: "5000"
+        - name: INFLUX_TOKEN
+          value: "hABVMTND1Hao381K7mOnYlsVSSk_myy3Vwn4OZEnE9qsNgPniAmhvigj_Ciy0XhtVjj3Lr-apOhUO86AT1c2jw=="
+        - name: INFLUX_ORG
+          value: "loginservice"
+        - name: INFLUX_URL
+          value: "https://eu-central-1-1.aws.cloud2.influxdata.com"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: signupservice
+spec:
+  type: ClusterIP
+  selector:
+    app: signupservice
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000

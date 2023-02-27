@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Registraion Form</title>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='Registration_Form.css') }}" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!--Container Start-->
+    <div id="container">
+        <!--Wrap Start-->
+        <div class="form-wrap">
+        <h1>Sign up here</h1>
+        <!-- Form Start-->
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="form-group">
+                <label for="cpass">Confirm Password</label>
+                <input type="password" name="cpassword" id="confirm-password">
+            </div>
+            <button type="submit">Sign Up</button>
+            <p class="bottom-text">
+                By Clicking the Sign Up Button, you agree to our 
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </form>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <!--Form Close-->
+        </div>
+        <footer>
+            <p>Already have a Account? No Problem, <a href="#">Login Here</a></p>
+        </footer>
+    </div>
+    <!-- Container Close-->
+    
+</body>
+</html>
