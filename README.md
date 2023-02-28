@@ -52,7 +52,7 @@ kubectl apply -f ./release/kubernetes-manifests.yaml
 kubectl get pods
 ```
 
-Once everything all the pods are running, do:
+Once all the pods are running, do:
 
 6.
 ```
