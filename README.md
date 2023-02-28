@@ -81,3 +81,8 @@ signupservice-external   LoadBalancer   10.108.0.181    34.171.32.106    3000:30
 
 With the external ip address of signupservice-external, enter in your the search bar of your browser <EXTERNAL_IP>:3000 to access the signup page.
 Once there you can enter the email address and the password with which you want to login.
+
+
+Made by Jonathan Zöllinger, Pascal Schütze and Rasan Younis
+(Originally we had a different repository consisting just of the folder we were working in. Here is the link https://github.com/RasanYo/signupservice.git. At the end we created a new repository with all the other files. So it might seem as if only one person did all the commits for this repository, but in reality everyone contributed equally.)
+
