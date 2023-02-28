@@ -13,7 +13,9 @@ git clone https://github.com/RasanYo/cse_signupservice.git
 
 To test the signup feature locally, use the following instructions:
 ```
-cd src/signupservice/src
+cd src/signupservice
+pip install -r requirements.txt
+cd src
 py app.py
 ```
 If the launch is successful, you should see in the command prompt the local address under which the app is running
